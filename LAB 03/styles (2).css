@@ -1,0 +1,51 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+.table2{
+    border-spacing: 0 20px;
+}
+
+.box1{
+    background-color: darkred;
+    text-align: center;
+}
+
+.box2{
+    background-color: deeppink;
+    text-align: center;
+}
+
+.box3{
+    background-color: brown;
+    text-align: center;
+}
+
+.box_text_color{
+    color: white;
+    padding: 10px;
+    margin: 0px;
+}
+
+/*.td_image_width{
+    width: 570px;
+    height: 400px;
+}*/
+.td_image_width {
+    width: 570px; /* Set the width of the container to 570px */
+}
+
+  /* Style for images inside the containers */
+.td_image_width img {
+    width: 570px;  /* Set image width to 570px */
+    height: 400px; /* Set image height to 400px */
+    display: block; /* Display image as a block element */
+    margin: 0 auto; /* Optionally, center the image within the container */
+}
+
+p{
+    font-size: 16px;
+    font-family: Arial;
+    color: #3d3d3d;
+}
