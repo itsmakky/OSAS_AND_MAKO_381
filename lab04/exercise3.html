@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Lab4 – Exercise 1</title>
+</head>
+<body>
+<h1>JavaScript Lab</h1>
+    <script>
+        let classRooster = ['Alice','Tom', 'Charlie', 'Diana', 'Evan'];
+        let classRoosterString = classRooster.toString();
+        console.log(classRoosterString);
+        console.log(classRooster);
+        classRooster.push('Fiona', 'Nancy')
+        classRooster.shift();
+        console.log(classRooster);
+        console.log(classRooster.length)
+            let classInfo = {
+                className: 'ENSF381: Full-Stack Web Development',
+                instructor :  'Dr. Smith',
+                students : classRooster,
+                details : {
+                    semester: 'Winter',
+                    year: 2025
+                },
+                schedule: ['Monday', 'Wednesday' , 'Friday']
+            };
+            classInfo.instructor = 'Dr. Deb';
+            console.log(classInfo.className,classInfo.instructor, classInfo.students);
+            console.log(classInfo.details.semester);
+            console.log(classInfo);
+            let{className, students} = classInfo;
+            console.log(className, students);
+            let{semester, year} = classInfo.details;
+            console.log(semester, year)
+            let[student1, student2]= classInfo.students;
+            remainingStudents = classInfo.students.slice(2);
+            console.log(student1, student2, remainingStudents);
+    </script>
+</body>
+</html>
