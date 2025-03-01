@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Lab5 - Exercise 3</title>
+</head>
+<body>
+<input type="text" id="textInput" placeholder="Type something here..."/>
+<label id="textLabel">ENSF381 course</label>
+<button id="redButton">Red</button>
+<button id="blueButton">Blue</button>
+<button id="greenButton">Green</button>
+<button id="orangeButton">Orange</button>
+<button id="purpleButton">Purple</button>
+
+</body>
+<script type="text/javascript">
+   const textInput = document.getElementById("textInput")
+   const textLabel = document.getElementById("textLabel")
+   const redButton = document.getElementById("redButton")
+   const blueButton = document.getElementById("blueButton")
+   const greenButton = document.getElementById("greenButton")
+   const orangeButton= document.getElementById("orangeButton")
+   const purpleButton = document.getElementById("purpleButton")
+   
+   textInput.addEventListener("keydown", async(event)=>{
+            if (event.key == "Enter") {
+               
+                data = await retrieveData(textInput.value);
+
+                if(typeof data == 'string'){
+                    data= await retrieveData (textInput.value)
+                    textLabel.textContent = data
+                    
+
+                }
+                else{
+                    textLabel.textContent = "ID: "  + data.id +", "+ "Name: " + data.first_name + ", " + "Group: " + data.user_group
+                    textInput.value = ""; // Clear input field
+                }
+            }
+    });
+    
+    
+
+   function updateLabel(){
+    textLabel.textcontent = textInput.value;
+    textInput.value = ""
+   }
+   textInput.addEventListener("keypress", function(event){
+    if(event.key == "Enter"){
+        updateLabel();
+    }
+   });
+   redButton.addEventListener("click", function(){
+    textLabel.style.color = "red";
+   });
+   blueButton.addEventListener("click", function(){
+    textLabel.style.color = "blue";
+   });
+   greenButton.addEventListener("click", function(){
+    textLabel.style.color = "green";
+   });
+   orangeButton.addEventListener("click", function(){
+    textLabel.style.color = "orange";
+   });
+   purpleButton.addEventListener("click", function(){
+    textLabel.style.color = "purple";
+   });
+
+   async function retrieveData(ID){
+        try{
+            const response = await fetch('https://67c2089161d8935867e536ac.mockapi.io/users_api');
+            const data = await response.json();
+            console.log(data)
+            for (let i = 0; i < data.length; i++) {
+                if(data[i].id == ID){
+                    console.log("ID:", data[i].id, "Name:", data[i].first_name , "Group:",data[i].user_group)
+                    return data[i];
+            
+                }
+                else if(i== data.length -1){
+                    console.log("No users were found with the provided User_ID")
+                    return "No users were found with the provided User_ID"
+                }
+            }
+        }catch(error){
+            console.error('Error fetching data;', error)
+        }
+   }
+    
+
+
+
+
+</script>
+</html>
