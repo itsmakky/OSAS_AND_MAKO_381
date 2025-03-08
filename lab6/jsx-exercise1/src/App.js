@@ -10,7 +10,7 @@ function App() {
       <h1>ENSF-381: Full Stack Web Development</h1>
       <p>React Components</p>
       <p>{currentYear}</p>
-      <p>{isLoggedIn ? "Welcome back!":"Please log in."}</p>
+      {isLoggedIn ? <p>Welcome back!</p> :<p>Please log in.</p>}
     </div>
   ); 
 }
