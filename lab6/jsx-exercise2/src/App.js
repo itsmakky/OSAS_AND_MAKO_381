@@ -8,9 +8,6 @@ function App() {
   const date = new Date();
   const currentYear = date.getFullYear();
   let isLoggedIn = true;
-  /*const h_title = "Home Page";
-  const a_title = "About Us";
-  const c_title = "Contact Us";*/
   return (
     <div className="App">
       <h1>ENSF-381: Full Stack Web Development</h1>
